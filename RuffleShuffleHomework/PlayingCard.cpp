@@ -1,5 +1,5 @@
 #include "PlayingCard.h"
-
+PlayingCard::PlayingCard() : type(), suit(){}
 PlayingCard::PlayingCard(char t, string s) : type(t), suit(s) {}
 
 char PlayingCard::getType() const {
@@ -9,5 +9,3 @@ char PlayingCard::getType() const {
 string PlayingCard::getSuit() const {
     return suit;
 }
-//ss
-//sd

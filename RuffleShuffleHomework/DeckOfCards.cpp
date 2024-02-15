@@ -12,7 +12,7 @@ DeckOfCards::DeckOfCards() {
     }
     currentCardIndex = 0;
 }
-
+DeckOfCards::~DeckOfCards() {}
 void DeckOfCards::raffleShuffle() {
     srand(time(0));
     for (int i = 0; i < numCards; ++i) {
@@ -29,5 +29,3 @@ PlayingCard DeckOfCards::dealCard() {
     }
     return PlayingCard('-', "empty");
 }
-//ss
-//df

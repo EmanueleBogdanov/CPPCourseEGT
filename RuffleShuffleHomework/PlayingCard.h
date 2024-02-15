@@ -5,7 +5,7 @@ using namespace std;
 
 class PlayingCard {
 public:
-    Playing();
+    PlayingCard();
     PlayingCard(char t, string s);
     char getType() const;
     string getSuit() const;

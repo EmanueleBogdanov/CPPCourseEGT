@@ -21,6 +21,3 @@ using namespace std;
         return 0;
     }
 
-
-//ss
-    //df
