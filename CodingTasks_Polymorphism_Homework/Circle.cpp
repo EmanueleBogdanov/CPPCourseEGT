@@ -9,8 +9,3 @@ void Circle::draw()   {
 double Circle::area()  {
     return M_PI * this->radius * this->radius;
 }
-
-void Circle::printArea(){
-
-    cout << "Area is:" << area() << endl;
-}

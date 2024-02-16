@@ -8,7 +8,7 @@ public:
 
     void draw()override;
     double area()override;
-    void printArea();
+    
 private:
     double radius;
 };

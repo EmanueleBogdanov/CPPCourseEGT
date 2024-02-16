@@ -9,8 +9,3 @@ void Rectangle::draw()    {
 double Rectangle::area(){
     return width * height;
 }
-
-void Rectangle::printArea(){
-
-    cout << "Area is:" << area() << endl;
-}
