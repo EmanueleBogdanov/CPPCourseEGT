@@ -7,8 +7,8 @@ Version 1.0
 This program creates a simple chatbot
 
 Allows user to ask bot a question
-If the bot knows the answer to the question, the bot will reply with the answer
-If the bot does not know the answer to the question, the bot will ask the user the same question and store the answer for future use
+If the bot knows the m_answer to the question, the bot will reply with the m_answer
+If the bot does not know the m_answer to the question, the bot will ask the user the same question and store the m_answer for future use
 */
 
 
@@ -30,9 +30,9 @@ int main()
         {
             userInput.at(i) = tolower(userInput.at(i));
         }
-        if (bot.isQuestion(userInput) == true)					// check if bot knows answer to the question.
-        {														// if bot knows the answer, reply with answer if bot does not know the answer then bot will ask the same question,
-            if (bot.check(userInput) == true)					//and store the users answer in the linked list as well as the text file
+        if (bot.isQuestion(userInput) == true)					// check if bot knows m_answer to the question.
+        {														// if bot knows the m_answer, reply with m_answer if bot does not know the m_answer then bot will ask the same question,
+            if (bot.check(userInput) == true)					//and store the users m_answer in the linked list as well as the text file
             {
                 bot.reply(userInput);
             }

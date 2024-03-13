@@ -2,24 +2,24 @@
 
 question::question()
 {
-    query = "";
-    answer = "";
+    m_query = "";
+    m_answer = "";
 }
 
-question::question(std::string question, std::string answer)
+question::question(std::string question, std::string m_answer)
 {
-    query = question;
-    this->answer = answer;
+    m_query = question;
+    this->m_answer = m_answer;
 }
 
 std::string question::m_getQuery()
 {
-    return query;
+    return m_query;
 }
 
 std::string question::m_getAnswer()
 {
-    return answer;
+    return m_answer;
 }
 
 question::~question()

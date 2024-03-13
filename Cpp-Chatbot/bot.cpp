@@ -7,12 +7,12 @@ bot::bot()
     // std::ifstream inputFile;
     // inputFile.open("QA.txt");
     // std::string tmpQ; // used for temporarily storing questions from text file
-    // std::string tmpA; // used for temporarily storing answer from text file
+    // std::string tmpA; // used for temporarily storing m_answer from text file
 
     // while (!inputFile.eof()) //loop until end of file is reached
     // {
     //     getline(inputFile, tmpQ, ';');	// read each line of file one at a time until end of file
-    //     getline(inputFile, tmpA);		// store questions and answers from file into two different variables
+    //     getline(inputFile, tmpA);		// store questions and m_answers from file into two different variables
     //     question questionObj(tmpQ, tmpA); // put variables in an object
     //     questionList.push_back(questionObj); // store the object in a node in a doubly linked list
     // }
@@ -70,9 +70,9 @@ void bot::storeNewQuestion(std::string input)
 {
     std::string tmp;
     std::cout << "Hmmm . . . that's a good question! Maybe you could help me? " << std::endl << input << std::endl;
-    getline(std::cin, tmp); // ask user to answer the question
-    question new_query(input, tmp); // store new question and answer in an object
-    questionList.push_back(new_query); // store that object in a node inside of the doubly linked list
+    getline(std::cin, tmp); // ask user to m_answer the question
+    question new_m_query(input, tmp); // store new question and m_answer in an object
+    questionList.push_back(new_m_query); // store that object in a node inside of the doubly linked list
     // std::ofstream outputFile;
     // outputFile.open("QA.txt", std::ios::app);
     // if (outputFile.is_open())
