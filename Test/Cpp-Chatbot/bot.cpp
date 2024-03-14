@@ -6,16 +6,25 @@ bot::bot()
 {
      std::ifstream inputFile;
      inputFile.open("QA.txt");
+     if (inputFile.is_open()) {
+         std::cout << "Yes" << std::endl;
+     } else {
+         std::cout << "No" << std::endl;
+         std::cout << "Yes" << std::endl;
+     }
      std::string tmpQ; // used for temporarily storing questions from text file
      std::string tmpA; // used for temporarily storing m_answer from text file
 
-     // while (!inputFile.eof()) //loop until end of file is reached
-     // {
-     //     getline(inputFile, tmpQ, ';');	// read each line of file one at a time until end of file
-     //     getline(inputFile, tmpA);		// store questions and m_answers from file into two different variables
-     //     question questionObj(tmpQ, tmpA); // put variables in an object
-     //     questionList.push_back(questionObj); // store the object in a node in a doubly linked list
-     // }
+     while (!inputFile.eof()) //loop until end of file is reached
+     {
+         getline(inputFile, tmpQ, ';');	// read each line of file one at a time until end of file
+         getline(inputFile, tmpA);		// store questions and m_answers from file into two different variables
+         question questionObj(tmpQ, tmpA); // put variables in an object
+         questionList.push_back(questionObj); // store the object in a node in a doubly linked list
+
+        // std::cout << " q:" << tmpQ << " a:" << tmpA << std::endl;
+
+     }
 }
 
 bool bot::isQuestion(std::string input) // check if user input is formatted correctly ('?' at end of question return true if correct format, return false if inncorect format
@@ -73,17 +82,17 @@ void bot::storeNewQuestion(std::string input)
     getline(std::cin, tmp); // ask user to m_answer the question
     question new_m_query(input, tmp); // store new question and m_answer in an object
     questionList.push_back(new_m_query); // store that object in a node inside of the doubly linked list
-     // std::ofstream outputFile;
-     // outputFile.open("QA.txt", std::ios::app);
-     // if (outputFile.is_open())
-     // {
-     //     outputFile << std::endl << input << ";" << tmp;
-     // }
-     // else
-     // {
-     //     std::cout << "Error, file didn't open." << std::endl;
-     // }
-     // outputFile.close();
+     std::ofstream outputFile;
+     outputFile.open("QA.txt", std::ios::app);
+     if (outputFile.is_open())
+     {
+         outputFile << std::endl << input << ";" << tmp;
+     }
+     else
+     {
+         std::cout << "Error, file didn't open." << std::endl;
+     }
+     outputFile.close();
 
 
 }
